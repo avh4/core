@@ -10,6 +10,8 @@ Elm.Native.Time.make = function(elm) {
   var Maybe = Elm.Maybe.make(elm);
   var Utils = Elm.Native.Utils.make(elm);
 
+  var initTime = elm.timer.now();
+
   function fpsWhen(desiredFPS, isOn) {
     var msPerFrame = 1000 / desiredFPS;
     var prev = elm.timer.now(), curr = prev, diff = 0, wasOn = true;
@@ -58,7 +60,8 @@ Elm.Native.Time.make = function(elm) {
       delay : NS.delay,
       timestamp : NS.timestamp,
       toDate : function(t) { return new window.Date(t); },
-      read   : read
+      read   : read,
+      initTime : initTime
   };
 
 };

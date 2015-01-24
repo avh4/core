@@ -103,3 +103,6 @@ will update one second later than any mouse click.
 -}
 delay : Time -> Signal a -> Signal a
 delay = Native.Time.delay
+
+initTime : Time
+initTime = Native.Time.initTime

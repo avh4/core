@@ -3,7 +3,7 @@ module Random
     , int, float
     , list, pair
     , minInt, maxInt
-    , generate, initialSeed
+    , generate, initialSeed, randomSeed
     , customGenerator
     )
   where
@@ -72,6 +72,7 @@ module. It has a period of roughly 2.30584e18.
 import Basics (..)
 import List
 import List ((::))
+import Time (initTime)
 
 
 {-| Create a generator that produces 32-bit integers in a given range. This
@@ -256,6 +257,8 @@ initialSeed : Int -> Seed
 initialSeed n =
     Seed (initState n) next split range
 
+randomSeed : Seed
+randomSeed = initialSeed (round initTime)
 
 {-| Produce the initial generator state. Distinct arguments should be likely
 to produce distinct generator states.
