@@ -90,13 +90,13 @@ turns =
 
 
 {-| Convert polar coordinates (r,&theta;) to cartesian coordinates (x,y). -}
-fromPolar : (Float,Float) -> (Float,Float)
+fromPolar : (number,number) -> (Float,Float)
 fromPolar =
   Native.Basics.fromPolar
 
 
 {-| Convert cartesian coordinates (x,y) to polar coordinates (r,&theta;). -}
-toPolar : (Float,Float) -> (Float,Float)
+toPolar : (number,number) -> (Float,Float)
 toPolar =
   Native.Basics.toPolar
 
